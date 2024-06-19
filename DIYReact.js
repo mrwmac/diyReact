@@ -9,12 +9,19 @@ function createElement(type, props, ...children)
     return{
         type,
         props: {...props},
-        children
+        children: children.map( child => typeof child === 'object' ? child : createTextElement(child))
     }
 }
 
 
-function createTextElement(text)
-{
-    return createElement('TEXT_ELEMENT', {nodeValue: text})
-}
+
+function createTextElement(text) {
+    console.log('TEXTTTTTTT')
+    return {
+      type: "TEXT_ELEMENT",
+      props: {
+        nodeValue: text,
+        children: [],
+      },
+    }
+  }
