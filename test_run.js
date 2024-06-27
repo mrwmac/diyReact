@@ -14,6 +14,9 @@ function testSuite()
     console.log(testAPropsChildren1());
 
     
+    diyREACT.render(testANoProps1(), document.body)
+
+    diyREACT.render(testAPropsChildren1(), document.body)
 }
 
 function testANoProps1 (){
@@ -32,7 +35,7 @@ function testAProps1 (){
 
 function testAPropsChildren1 (){
     return diyREACT.createElement('div', {className: 'diy_el_class'}, 
-        createElement('a', {className: 'diy_el_child_class'}),
-        createElement('span', {id: 'span_with_text'}, createElement('hello'))
+        diyREACT.createElement('a', {className: 'diy_el_child_class'}),
+        diyREACT.createElement('span', {id: 'span_with_text'}, diyREACT.createElement('hello', null, 'DUM DUM DUM'))
     );
 }
