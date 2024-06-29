@@ -17,6 +17,8 @@ function testSuite()
     diyREACT.render(testANoProps1(), document.body)
 
     diyREACT.render(testAPropsChildren1(), document.body)
+
+    diyREACT.render(testAPropsChildren2(), document.body)
 }
 
 function testANoProps1 (){
@@ -38,4 +40,10 @@ function testAPropsChildren1 (){
         diyREACT.createElement('a', {className: 'diy_el_child_class'}),
         diyREACT.createElement('span', {id: 'span_with_text'}, diyREACT.createElement('hello', null, 'DUM DUM DUM'))
     );
+}
+
+
+
+function testAPropsChildren2 (){
+    return    diyREACT.createElement('a', {href: 'http://www.google.com'}, 'Click here please');
 }

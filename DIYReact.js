@@ -34,7 +34,6 @@ function createTextElement(text) {
         document.createTextNode(element.props.nodeValue) : document.createElement(element.type);
 
     const isProperty = key => key !== 'children';
-
     Object.keys(element.props).filter(isProperty).forEach(name => { dom[name] = element.props[name]});
 
     element.props.children.forEach(child => {
